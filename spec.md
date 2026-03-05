@@ -67,3 +67,6 @@ Pareil pour l'humidité : le seul % où H est stable est 42 %.
 Le jeu est de trouver l'équilibre, donc de régler T et H vers les valeurs idéales, et de les garder là.
 
 Comme indice, quand le curseur de T ou de H est sur la bonne valeur, il clignote 2 fois.
+
+Pour la mise en page HTML et CSS, prepare un structure simple et neutre, je traivaillera le visuel apres.
+
