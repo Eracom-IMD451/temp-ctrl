@@ -54,6 +54,17 @@ nous aurions un page web, avec les élémetnrs suivantes:
 
 La zone d'affichage du jeu (p5js) affiche les curseurs des valuer T & H, avec leur historique.
 
-Si on apui sur les controles T & H +/– les valeurs augmentent ou descendent lentement. 
+Si on apui sur les controles T & H +/– les valeurs augmentent ou descendent lentement (1 + ou % par 500ms). 
 
-Si on re-appuis, l
+Si on re-appuis sur les controles, les valeurs augements ou descendent plus rapidement, ou se stabilise.
+
+La termperature idéale est de 20°, et la humidité idéale est de 42%.
+
+Le jeu commence avec un temperature éléve de 25, qui monte lentement, et un H faible, à 25%, qui descends legerment.
+
+Si la T est superieure à l'idéale, elle sera instable, et augmenter lentement (1° par 100ms), ou vice versa.
+Pareil pour la H, la seule % que H est stable, est 42%.
+
+Le je est de trouver l'équilibre, donc de regler T et H vers les valuers idéaux, et de les garder la.
+
+Comme indice, quand le curseur de T ou de H est sur la bonne valeur, elle clignote 2 fois.
