@@ -39,6 +39,34 @@ Si tu as proposé des sous-agents, crée-les dans .claude/agents/.
 
 - - - - - - - - - - -
 
+## Décisions d'implémentation
+
+### Structure
+- Fichiers séparés : `index.html`, `style.css`, `js/sketch.js`, `js/game.js`, `js/history.js`
+
+### Contrôles T/H
+- Chaque appui sur +/- cumule ±1°C/s (ou %/s) de vitesse de contrôle
+- Plafonné à ±5°C/s (ou %/s)
+- Pour arrêter : appuyer sur le bouton opposé jusqu'à vitesse 0
+
+### Dérive naturelle
+- 1°C/s et 1%/s
+- T et H dérivent en s'éloignant de leur idéal (T=20°C, H=42%)
+- En dessous de l'idéal → descend, au dessus → monte
+
+### Affichage
+- Courbes défilantes style moniteur cardiaque, historique ~30 secondes
+- Valeurs entières uniquement
+- Clignotement : 2 flash en boucle quand la valeur est pile sur l'idéal
+- Cible : téléphone/tablette en portrait, boutons tactiles gros
+
+### Gameplay
+- Puzzle d'escape game : pas de victoire explicite
+- Le joueur doit assembler "2042" (T=20, H=42) lui-même comme code secret
+- Aucun indice supplémentaire au-delà du clignotement
+
+- - - - - - - - - - -
+
 ## Spec
 
 On va faire un jeu avec p5.js.
