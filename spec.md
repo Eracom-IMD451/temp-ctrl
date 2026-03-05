@@ -1,4 +1,4 @@
-## Préambule:
+## Préambule
 
 Préfère le feedback direct et honnête plutôt que l'approbation. Corrige-moi si j'ai tort, souligne les faiblesses et les alternatives plutôt que de valider mon approche.
 
@@ -8,13 +8,13 @@ Réponses concises, mais complètes là où ça compte. Tout n'a pas besoin d'ê
 
 Pour le contenu markdown, affiche-le en tant que code et non en texte formaté.
 
-Tabs, plutôt qu'espaces.
+Tabs plutôt qu'espaces.
 
 Pas de trucs de syntaxe fantaisistes ni de démonstrations, n'écris pas du code trop compact ou inutilement optimisé : le code doit être simple. Même si c'est verbeux et basique, du code lisible c'est mieux.
 
 Le code doit inclure des instructions clé en main.
 
-## Instructions:
+## Instructions
 
 Interviewe-moi avant de faire quoi que ce soit d'autre. Creuse en profondeur :
 - Les décisions d'implémentation technique que la spec ne couvre pas
@@ -22,10 +22,9 @@ Interviewe-moi avant de faire quoi que ce soit d'autre. Creuse en profondeur :
 - Les ambiguïtés ou contradictions dans la spec
 - Les compromis dont je devrais être conscient
 
-Ne pose pas de questions évidentes. Continue l'interview jusqu'à ce qu'on ait
-tout couvert, une série de questions à la fois.
+Ne pose pas de questions évidentes. Continue l'interview jusqu'à ce qu'on ait tout couvert, une série de questions à la fois.
 
-Pose moi les questions les un s apres les autres, avec choix multipe.
+Pose-moi les questions les unes après les autres, à choix multiple.
 
 Ensuite, à partir de notre discussion, propose :
 1. L'architecture et la structure de fichiers
@@ -42,29 +41,29 @@ Si tu as proposé des sous-agents, crée-les dans .claude/agents/.
 
 ## Spec
 
-on va faire un jeu avec p5js
+On va faire un jeu avec p5.js.
 
-nous aurions un page web, avec les élémetnrs suivantes:
+Nous aurions une page web, avec les éléments suivants :
 
-- Affichage de la température T: affiche la valeur de la température, entre 0 et 40 °C
-- Affichage de l'humidité H: affiche la valeur de l'humidité, entre 10 % et 90 %
-- Zone de dessin du jeu (p5js)
-- Contrôles de la température T: deux boutons, augmenter la température, diminuer la température
-- Contrôles de l'humidité H: deux boutons, augmenter la humidité, diminuer la humidité
+- Affichage de la température T : affiche la valeur de la température, entre 0 et 40 °C
+- Affichage de l'humidité H : affiche la valeur de l'humidité, entre 10 % et 90 %
+- Zone de dessin du jeu (p5.js)
+- Contrôles de la température T : deux boutons, augmenter la température, diminuer la température
+- Contrôles de l'humidité H : deux boutons, augmenter l'humidité, diminuer l'humidité
 
-La zone d'affichage du jeu (p5js) affiche les curseurs des valuer T & H, avec leur historique.
+La zone d'affichage du jeu (p5.js) affiche les curseurs des valeurs T et H, avec leur historique.
 
-Si on apui sur les controles T & H +/– les valeurs augmentent ou descendent lentement (1 + ou % par 500ms). 
+Si on appuie sur les contrôles T ou H +/−, les valeurs augmentent ou descendent lentement (1 °C ou % par 500 ms).
 
-Si on re-appuis sur les controles, les valeurs augements ou descendent plus rapidement, ou se stabilise.
+Si on réappuie sur les contrôles, les valeurs augmentent ou descendent plus rapidement, ou se stabilisent.
 
-La termperature idéale est de 20°, et la humidité idéale est de 42%.
+La température idéale est de 20 °C, et l'humidité idéale est de 42 %.
 
-Le jeu commence avec un temperature éléve de 25, qui monte lentement, et un H faible, à 25%, qui descends legerment.
+Le jeu commence avec une température élevée de 25 °C, qui monte lentement, et une humidité faible, à 25 %, qui descend légèrement.
 
-Si la T est superieure à l'idéale, elle sera instable, et augmenter lentement (1° par 100ms), ou vice versa.
-Pareil pour la H, la seule % que H est stable, est 42%.
+Si la T est supérieure à l'idéale, elle sera instable et augmentera lentement (1 °C par 100 ms), et vice versa.
+Pareil pour l'humidité : le seul % où H est stable est 42 %.
 
-Le je est de trouver l'équilibre, donc de regler T et H vers les valuers idéaux, et de les garder la.
+Le jeu est de trouver l'équilibre, donc de régler T et H vers les valeurs idéales, et de les garder là.
 
-Comme indice, quand le curseur de T ou de H est sur la bonne valeur, elle clignote 2 fois.
+Comme indice, quand le curseur de T ou de H est sur la bonne valeur, il clignote 2 fois.
