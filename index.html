@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Temp Ctrl</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<div id="displays">
+			<div class="display">
+				<span class="label">T</span>
+				<span id="display-t" class="value">25 °C</span>
+			</div>
+			<div class="display">
+				<span class="label">H</span>
+				<span id="display-h" class="value">25 %</span>
+			</div>
+		</div>
+
+		<div id="game-canvas"></div>
+
+		<div id="controls">
+			<div class="control-group">
+				<span class="control-label">T</span>
+				<button id="btn-t-minus">−</button>
+				<span id="speed-t" class="speed">0</span>
+				<button id="btn-t-plus">+</button>
+			</div>
+			<div class="control-group">
+				<span class="control-label">H</span>
+				<button id="btn-h-minus">−</button>
+				<span id="speed-h" class="speed">0</span>
+				<button id="btn-h-plus">+</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+	<script src="js/game.js"></script>
+	<script src="js/history.js"></script>
+	<script src="js/sketch.js"></script>
+</body>
+</html>
