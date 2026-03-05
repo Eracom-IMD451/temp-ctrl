@@ -76,13 +76,6 @@ var sketch = function(p) {
 		p.line(xStart, idealY, xStart + graphWidth, idealY);
 		p.drawingContext.setLineDash([]);
 
-		// Label idéal
-		p.noStroke();
-		p.fill(color[0], color[1], color[2], 100);
-		p.textSize(10);
-		p.textAlign(p.RIGHT, p.CENTER);
-		p.text(idealVal, xStart - 4, idealY);
-
 		// Courbe
 		p.stroke(color[0], color[1], color[2]);
 		p.strokeWeight(2);
@@ -119,12 +112,12 @@ var sketch = function(p) {
 
 		Game.update(dt);
 
-		historyT.push(Game.T);
-		historyH.push(Game.H);
+		historyT.push(Game.displayT());
+		historyH.push(Game.displayH());
 
 		// Mise à jour affichage textuel
-		displayT.textContent = Game.T + " °C";
-		displayH.textContent = Game.H + " %";
+		displayT.textContent = Game.displayT() + " °C";
+		displayH.textContent = Game.displayH() + " %";
 		speedT.textContent = (Game.controlSpeedT > 0 ? "+" : "") + Game.controlSpeedT;
 		speedH.textContent = (Game.controlSpeedH > 0 ? "+" : "") + Game.controlSpeedH;
 

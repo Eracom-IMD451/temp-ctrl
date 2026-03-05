@@ -14,46 +14,22 @@ var Game = {
 
 	MAX_CONTROL_SPEED: 5,
 
-	// Accumulateurs pour le timing
-	driftAccumulatorT: 0,
-	driftAccumulatorH: 0,
-	controlAccumulatorT: 0,
-	controlAccumulatorH: 0,
+	// Coefficient de dérive proportionnelle à la distance
+	DRIFT_RATE: 0.05,
 
 	update: function(dt) {
-		// Dérive naturelle : 1 unité par seconde, s'éloigne de l'idéal
-		this.driftAccumulatorT += dt;
-		while (this.driftAccumulatorT >= 1000) {
-			this.driftAccumulatorT -= 1000;
-			if (this.T > this.IDEAL_T) {
-				this.T += 1;
-			} else if (this.T < this.IDEAL_T) {
-				this.T -= 1;
-			}
-		}
+		var seconds = dt / 1000;
 
-		this.driftAccumulatorH += dt;
-		while (this.driftAccumulatorH >= 1000) {
-			this.driftAccumulatorH -= 1000;
-			if (this.H > this.IDEAL_H) {
-				this.H += 1;
-			} else if (this.H < this.IDEAL_H) {
-				this.H -= 1;
-			}
-		}
+		// Dérive naturelle : proportionnelle à la distance de l'idéal
+		var distT = this.T - this.IDEAL_T;
+		this.T += distT * this.DRIFT_RATE * seconds;
 
-		// Contrôle joueur : appliqué chaque seconde
-		this.controlAccumulatorT += dt;
-		while (this.controlAccumulatorT >= 1000) {
-			this.controlAccumulatorT -= 1000;
-			this.T += this.controlSpeedT;
-		}
+		var distH = this.H - this.IDEAL_H;
+		this.H += distH * this.DRIFT_RATE * seconds;
 
-		this.controlAccumulatorH += dt;
-		while (this.controlAccumulatorH >= 1000) {
-			this.controlAccumulatorH -= 1000;
-			this.H += this.controlSpeedH;
-		}
+		// Contrôle joueur : continu
+		this.T += this.controlSpeedT * seconds;
+		this.H += this.controlSpeedH * seconds;
 
 		// Clamp aux bornes
 		this.T = Math.max(this.MIN_T, Math.min(this.MAX_T, this.T));
@@ -70,11 +46,19 @@ var Game = {
 		this.controlSpeedH = Math.max(-this.MAX_CONTROL_SPEED, Math.min(this.MAX_CONTROL_SPEED, this.controlSpeedH));
 	},
 
+	displayT: function() {
+		return Math.round(this.T);
+	},
+
+	displayH: function() {
+		return Math.round(this.H);
+	},
+
 	isIdealT: function() {
-		return this.T === this.IDEAL_T;
+		return this.displayT() === this.IDEAL_T;
 	},
 
 	isIdealH: function() {
-		return this.H === this.IDEAL_H;
+		return this.displayH() === this.IDEAL_H;
 	}
 };

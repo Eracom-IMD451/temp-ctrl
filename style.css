@@ -57,24 +57,23 @@ body {
 
 #controls {
 	display: flex;
-	flex-direction: column;
-	gap: 12px;
+	flex-direction: row;
+	justify-content: center;
+	gap: 32px;
 	width: 100%;
 }
 
-.control-group {
+.control-column {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	gap: 12px;
+	gap: 8px;
 }
 
 .control-label {
 	font-weight: bold;
 	font-size: 1.2rem;
 	opacity: 0.5;
-	width: 24px;
-	text-align: right;
 }
 
 .speed {
@@ -97,6 +96,20 @@ button {
 	touch-action: manipulation;
 }
 
-button:active {
-	background: #ddd;
+.btn-t {
+	border-color: #c83838;
+	color: #c83838;
+}
+
+.btn-t:active {
+	background: #f0d0d0;
+}
+
+.btn-h {
+	border-color: #3c64c8;
+	color: #3c64c8;
+}
+
+.btn-h:active {
+	background: #d0d8f0;
 }
