@@ -14,7 +14,9 @@
 body {
 	font-family: Recursive;
   font-variation-settings: "MONO" 1;
-	background: #f5f5f5;
+  background-image: url('https://raw.githubusercontent.com/Eracom-IMD451/temp-ctrl/main/Img/Background.jpg');
+	background-size: cover;
+	background-position: center;
 	color: #222;
 }
 
@@ -95,29 +97,55 @@ button {
 	font-size: 1.5rem;
 	width: 64px;
 	height: 64px;
-	border: 2px solid #222;
+	border: 0px solid #222;
 	background: #fff;
-	border-radius: 8px;
+	border-radius: 0px;
 	cursor: pointer;
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
 }
 
+/*
 .btn-t {
 	border-color: #c83838;
 	color: #c83838;
+  background-image: url('https://raw.githubusercontent.com/Eracom-IMD451/temp-ctrl/main/Img/DownArrow.jpg');
+	background-size: contain; 
+  background-position: center;
+	background-repeat: no-repeat;
+}
+*/
+
+
+#btn-t-plus, #btn-h-plus {
+	background-image: url('https://raw.githubusercontent.com/Eracom-IMD451/temp-ctrl/main/Img/UpArrow.jpg');
+	background-size: contain; 
+  background-position: center;
+	background-repeat: no-repeat;
 }
 
+/* Assign DownArrow image to both "Minus" buttons */
+#btn-t-minus, #btn-h-minus {
+	background-image: url('https://raw.githubusercontent.com/Eracom-IMD451/temp-ctrl/main/Img/DownArrow.jpg');
+	background-size: contain; 
+  background-position: center;
+	background-repeat: no-repeat;
+}
+
+
 .btn-t:active {
-	background: #f0d0d0;
+	background: none;
 }
 
 .btn-h {
-	border-color: #3c64c8;
-	color: #3c64c8;
+	border-color: none;
+	color: none;
+
 }
 
 .btn-h:active {
-	background: #d0d8f0;
+	background: none;
 }
+
+
