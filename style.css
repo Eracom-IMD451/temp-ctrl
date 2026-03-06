@@ -125,7 +125,6 @@ button {
 	background-repeat: no-repeat;
 }
 
-/* Assign DownArrow image to both "Minus" buttons */
 #btn-t-minus, #btn-h-minus {
 	background-image: url('https://raw.githubusercontent.com/Eracom-IMD451/temp-ctrl/main/Img/DownArrow.jpg');
 	background-size: contain; 
